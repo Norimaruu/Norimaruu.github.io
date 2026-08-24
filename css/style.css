@@ -1,11 +1,11 @@
 :root {
-  --body: #16131c;       /* боди */
-  --sidebar: #1e1a26;    /* сайдер */
-  --header: #2f2540;     /* хедер */
-  --footer: #1a1620;     /* футер */
-  --text: #ddd6e8;       /* текст / почти белый */
-  --text-hover: #b08ad8; /* текст при наведении */
-  --tip: #4a3068;        /* фон подсказки */
+  --body: #16131c;
+  --sidebar: #1e1a26;
+  --header: #2f2540;
+  --footer: #1a1620;
+  --text: #ddd6e8;
+  --text-hover: #b08ad8;
+  --tip: #4a3068;
   --header-height: 72px;
 }
 
@@ -79,7 +79,6 @@ button {
   margin-bottom: 0;
 }
 
-/* карточка проекта */
 .work-card {
   max-width: 420px;
   padding: 24px 28px;
@@ -106,6 +105,308 @@ button {
   line-height: 1.5;
 }
 
+.nav--pinned {
+  position: sticky;
+  top: calc(var(--header-height) + 20px);
+}
+
+.nav--pinned .nav__menu {
+  margin-top: 0;
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.nav--pinned .nav__menu a {
+  opacity: 1;
+  transform: none;
+}
+
+.nav--pinned .nav__menu a:hover {
+  color: var(--text-hover);
+  scale: 1.07;
+}
+
+.nav--pinned .nav__menu a:hover::after {
+  width: 100%;
+}
+
+.fn {
+  margin-bottom: 24px;
+  padding: 24px 28px;
+  background: var(--sidebar);
+  scroll-margin-top: calc(var(--header-height) + 12px);
+}
+
+.fn:last-child {
+  margin-bottom: 0;
+}
+
+.fn h2 {
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.fn__note {
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: var(--header);
+  line-height: 1.65;
+}
+
+.demo-btn {
+  padding: 8px 16px;
+  background: var(--header);
+  color: var(--text);
+  transform-origin: left center;
+  transition: color 0.14s ease, background 0.14s ease, scale 0.1s ease;
+}
+
+.demo-btn:hover {
+  color: var(--text-hover);
+  scale: 1.07;
+}
+
+.demo-btn--texture:hover {
+  background: var(--tip);
+  color: var(--text);
+}
+
+.demo-btn--texture:active {
+  background: var(--body);
+  color: var(--text-hover);
+  scale: 1;
+}
+
+.demo-btn--toggle.is-on {
+  background: var(--tip);
+  color: var(--text-hover);
+}
+
+.demo-fold {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--header);
+  color: var(--text);
+  text-align: left;
+  line-height: 1.65;
+}
+
+.demo-fold__more {
+  display: none;
+  margin-top: 10px;
+}
+
+.demo-fold.is-open .demo-fold__more {
+  display: block;
+}
+
+.demo-select {
+  position: relative;
+  display: inline-block;
+}
+
+.demo-select__list {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 100%;
+  padding: 10px 12px;
+  background: var(--header);
+  transform: translateY(-8px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.demo-select.is-open .demo-select__list {
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.demo-select__list button {
+  color: var(--text);
+  transform-origin: left center;
+  transition: color 0.14s ease, scale 0.1s ease;
+}
+
+.demo-select__list button:hover {
+  color: var(--text-hover);
+  scale: 1.07;
+}
+
+.demo-search {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  padding: 8px 12px;
+  background: var(--header);
+  border: none;
+  color: var(--text);
+  font: inherit;
+}
+
+.demo-search::placeholder {
+  color: var(--text-hover);
+  opacity: 1;
+}
+
+.demo-search:focus {
+  outline: 1px solid var(--text-hover);
+}
+
+.demo-search-list {
+  margin-top: 14px;
+}
+
+.demo-search-list p {
+  margin-bottom: 10px;
+  padding: 12px 16px;
+  background: var(--header);
+  line-height: 1.65;
+}
+
+.demo-search-list p:last-child {
+  margin-bottom: 0;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--body);
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal__box {
+  width: 420px;
+  max-width: calc(100% - 48px);
+  padding: 24px 28px;
+  background: var(--header);
+}
+
+.modal__text {
+  line-height: 1.65;
+}
+
+.scroll-demo {
+  max-height: 220px;
+  overflow-y: scroll;
+  scrollbar-width: auto;
+  scrollbar-color: var(--text-hover) transparent;
+}
+
+.scroll-demo p {
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+.scroll-demo p:last-child {
+  margin-bottom: 0;
+}
+
+.scroll-demo::-webkit-scrollbar {
+  width: 32px;
+}
+
+.scroll-demo::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-demo::-webkit-scrollbar-thumb {
+  background: var(--text-hover);
+  border-radius: 0;
+}
+
+.page-menu {
+  position: sticky;
+  top: var(--header-height);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 20px 24px;
+}
+
+.page-menu__btn {
+  align-items: flex-end;
+}
+
+.page-menu__panel {
+  width: 100%;
+  margin-top: 20px;
+  transform: translateX(12px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.page-menu.is-open .page-menu__panel {
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.page-menu__panel p {
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.page-menu__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.page-menu__nav a {
+  position: relative;
+  display: inline-block;
+  color: var(--text);
+  text-decoration: none;
+  padding-bottom: 3px;
+  transform-origin: left center;
+  transition: color 0.14s ease, scale 0.1s ease;
+}
+
+.page-menu__nav a:hover {
+  color: var(--text-hover);
+  scale: 1.07;
+}
+
+.page-menu__nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--text-hover);
+  transition: width 0.1s ease;
+}
+
+.page-menu__nav a:hover::after {
+  width: 100%;
+}
+
 .footer {
   padding: 20px 24px;
   background: var(--footer);
@@ -114,7 +415,6 @@ button {
   font-size: 0.875rem;
 }
 
-/* кнопка меню */
 .nav__btn {
   display: flex;
   flex-direction: column;
@@ -133,12 +433,12 @@ button {
 }
 
 .nav__btn:hover .nav__line,
-.nav.is-open .nav__line {
+.nav.is-open .nav__line,
+.page-menu.is-open .nav__line {
   width: 32px;
   background: var(--text-hover);
 }
 
-/* выезд слева */
 .nav__menu {
   display: flex;
   flex-direction: column;
@@ -209,7 +509,6 @@ button {
   width: 100%;
 }
 
-/* язык */
 .lang {
   position: absolute;
   top: 0;
@@ -246,7 +545,6 @@ button {
   stroke-width: 2.35;
 }
 
-/* выезд влево */
 .lang__menu {
   position: absolute;
   right: calc(100% + 8px);
@@ -282,7 +580,6 @@ button {
   scale: 1.07;
 }
 
-/* Стиль кнопки — иконки */
 .contact .icon {
   display: block;
   width: 28px;
@@ -291,7 +588,6 @@ button {
   transition: fill 0.18s ease, scale 0.1s ease;
 }
 
-/* контакты */
 .contact {
   position: absolute;
   top: 0;
@@ -317,7 +613,6 @@ button {
   scale: 1.07;
 }
 
-/* выезд вправо */
 .contact__menu {
   position: absolute;
   left: calc(100% + 8px);
