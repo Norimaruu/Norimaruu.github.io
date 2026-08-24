@@ -249,21 +249,20 @@ button {
   scale: 1.07;
 }
 
-/* Стиль кнопки — иконки */
+/* Стиль кнопки — иконки из файлов */
 .icon {
   display: block;
   width: 28px;
   height: 28px;
-  fill: var(--text);
-  color: var(--text);
-  transition: fill 0.18s ease, color 0.18s ease, scale 0.1s ease;
+  object-fit: contain;
+  transition: scale 0.1s ease;
 }
 
 /* контакты */
 .contact {
   position: absolute;
   top: 0;
-  left: 10%;
+  left: calc(100% / 30);
   height: 100%;
   display: flex;
   align-items: center;
@@ -281,8 +280,6 @@ button {
 .contact__btn:hover .icon,
 .contact.is-open .contact__btn .icon,
 .contact__item:hover .icon {
-  fill: var(--text-hover);
-  color: var(--text-hover);
   scale: 1.07;
 }
 
