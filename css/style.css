@@ -1,11 +1,11 @@
 :root {
-  --body: #16131c;       /* боди */
-  --sidebar: #1e1a26;    /* сайдер */
-  --header: #2f2540;     /* хедер */
-  --footer: #1a1620;     /* футер */
-  --text: #ddd6e8;       /* текст / почти белый */
-  --text-hover: #b08ad8; /* текст при наведении */
-  --tip: #4a3068;        /* фон подсказки */
+  --body: #16131c;
+  --sidebar: #1e1a26;
+  --header: #2f2540;
+  --footer: #1a1620;
+  --text: #ddd6e8;
+  --text-hover: #b08ad8;
+  --tip: #4a3068;
   --header-height: 72px;
 }
 
@@ -67,6 +67,43 @@ button {
 
 .main {
   background: var(--body);
+  padding: 40px 32px;
+}
+
+.intro + .intro {
+  margin-top: 32px;
+}
+
+.intro h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.intro p {
+  margin-bottom: 0;
+}
+
+.intro h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.skills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+}
+
+.skills li {
+  transition: color 0.14s ease, scale 0.1s ease;
+}
+
+.skills li:hover {
+  color: var(--text-hover);
+  scale: 1.07;
 }
 
 .footer {
@@ -77,7 +114,6 @@ button {
   font-size: 0.875rem;
 }
 
-/* кнопка меню */
 .nav__btn {
   display: flex;
   flex-direction: column;
@@ -101,7 +137,6 @@ button {
   background: var(--text-hover);
 }
 
-/* выезд слева */
 .nav__menu {
   display: flex;
   flex-direction: column;
@@ -176,7 +211,6 @@ button {
   width: 100%;
 }
 
-/* язык */
 .lang {
   position: absolute;
   top: 0;
@@ -213,7 +247,6 @@ button {
   stroke-width: 2.35;
 }
 
-/* выезд влево */
 .lang__menu {
   position: absolute;
   right: calc(100% + 8px);
@@ -249,16 +282,50 @@ button {
   scale: 1.07;
 }
 
-/* Стиль кнопки — иконки из файлов */
-.icon {
+.contact__btn picture,
+.contact__item picture {
   display: block;
   width: 28px;
   height: 28px;
-  object-fit: contain;
-  transition: scale 0.1s ease;
+  background-color: var(--text);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-mode: alpha;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  transition: background-color 0.18s ease, scale 0.1s ease;
 }
 
-/* контакты */
+.contact__btn picture {
+  mask-image: url("../assets/icons/contact_icon.svg");
+  -webkit-mask-image: url("../assets/icons/contact_icon.svg");
+}
+
+.contact__item:nth-child(1) picture {
+  mask-image: url("../assets/icons/telegram_icon.svg");
+  -webkit-mask-image: url("../assets/icons/telegram_icon.svg");
+}
+
+.contact__item:nth-child(2) picture {
+  mask-image: url("../assets/icons/google_icon.svg");
+  -webkit-mask-image: url("../assets/icons/google_icon.svg");
+}
+
+.contact__item:nth-child(3) picture {
+  mask-image: url("../assets/icons/reddit_icon.svg");
+  -webkit-mask-image: url("../assets/icons/reddit_icon.svg");
+}
+
+.contact__btn picture img,
+.contact__item picture img {
+  display: block;
+  width: 28px;
+  height: 28px;
+  opacity: 0;
+}
+
 .contact {
   position: absolute;
   top: 0;
@@ -277,13 +344,13 @@ button {
   height: 40px;
 }
 
-.contact__btn:hover .icon,
-.contact.is-open .contact__btn .icon,
-.contact__item:hover .icon {
+.contact__btn:hover picture,
+.contact.is-open .contact__btn picture,
+.contact__item:hover picture {
+  background-color: var(--text-hover);
   scale: 1.07;
 }
 
-/* выезд вправо */
 .contact__menu {
   position: absolute;
   left: calc(100% + 8px);
