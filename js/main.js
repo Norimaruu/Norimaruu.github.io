@@ -12,7 +12,6 @@ const dict = {
     'intro.p3': 'I build responsive sites that display correctly and work reliably on any device. I work with HTML, CSS and JavaScript, with a focus on code quality, structure and details. I keep learning modern tools and methods so the result is visually neat and technically solid.',
     'intro.p4': 'For me it is not just about laying out a page, but turning an idea into a clear, functional and convenient product. I aim for clean code, a logical structure and an interface that is easy and comfortable to use.',
     'intro.p5': 'Open to new projects. If you have an idea for a website — write, we will discuss the tasks and bring it to life.',
-    'intro.skills': 'Skills',
     'footer.credit': 'This website was created by Norimaru',
   },
   ru: {
@@ -28,7 +27,6 @@ const dict = {
     'intro.p3': 'Я разрабатываю адаптивные сайты, которые корректно отображаются и стабильно работают на любых устройствах. Работаю с HTML, CSS и JavaScript, уделяя особое внимание качеству кода, структуре и деталям. Постоянно осваиваю современные инструменты и подходы, чтобы результат был не только визуально аккуратным, но и технически надёжным.',
     'intro.p4': 'Для меня важно не просто сверстать страницу, а превратить идею в понятный, функциональный и удобный продукт. Я стремлюсь к чистому коду, логичной структуре и интерфейсу, с которым пользователю легко и комфортно взаимодействовать.',
     'intro.p5': 'Открыт к новым проектам. Если у вас есть идея сайта — напишите, обсудим задачи и воплотим её в жизнь.',
-    'intro.skills': 'Навыки',
     'footer.credit': 'Сайт создан Norimaru',
   },
 };
