@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Norimaru</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- фиксированный хедер -->
+  <header class="header">
+    <div class="contact">
+      <button class="contact__btn" type="button" data-i18n-aria="contact.label" aria-expanded="false">
+        <img class="icon" src="assets/icons/contact_icon.svg" alt="">
+      </button>
+      <div class="contact__menu">
+        <button class="contact__item" type="button" data-tip="Telegram" aria-label="Telegram">
+          <img class="icon" src="assets/icons/telegram_icon.svg" alt="">
+        </button>
+        <button class="contact__item" type="button" data-tip="Gmail" aria-label="Gmail">
+          <img class="icon" src="assets/icons/google_icon.svg" alt="">
+        </button>
+        <button class="contact__item" type="button" data-tip="Reddit" aria-label="Reddit">
+          <img class="icon" src="assets/icons/reddit_icon.svg" alt="">
+        </button>
+      </div>
+    </div>
+    <div class="lang">
+      <button class="lang__btn" type="button" data-i18n-aria="lang.label" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M3 12h18"></path>
+          <path d="M12 3a14.5 14.5 0 0 1 0 18"></path>
+          <path d="M12 3a14.5 14.5 0 0 0 0 18"></path>
+        </svg>
+      </button>
+      <div class="lang__menu">
+        <button class="lang__opt" type="button" data-lang="en">EN</button>
+        <button class="lang__opt" type="button" data-lang="uk">UK</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar sidebar--left">
+      <div class="nav">
+        <button class="nav__btn" type="button" data-i18n-aria="nav.menu" aria-expanded="false">
+          <span class="nav__line"></span>
+          <span class="nav__line"></span>
+          <span class="nav__line"></span>
+        </button>
+        <nav class="nav__menu">
+          <a href="#home" data-i18n="nav.home">Home</a>
+          <a href="#about" data-i18n="nav.about">About me</a>
+          <a href="#works" data-i18n="nav.works">My works</a>
+          <a href="#contact" data-i18n="nav.contact">Contact information</a>
+        </nav>
+      </div>
+    </aside>
+    <main class="main"></main>
+    <aside class="sidebar sidebar--right"></aside>
+  </div>
+
+  <!-- обычный футер -->
+  <footer class="footer">
+    <p data-i18n="footer.credit">This website was created by Norimaru</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

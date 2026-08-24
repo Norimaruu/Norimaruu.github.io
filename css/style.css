@@ -1,0 +1,339 @@
+:root {
+  --body: #16131c;       /* боди */
+  --sidebar: #1e1a26;    /* сайдер */
+  --header: #2f2540;     /* хедер */
+  --footer: #1a1620;     /* футер */
+  --text: #ddd6e8;       /* текст / почти белый */
+  --text-hover: #b08ad8; /* текст при наведении */
+  --tip: #4a3068;        /* фон подсказки */
+  --header-height: 72px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--header-height);
+  background: var(--body);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 16px;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--header-height);
+  padding: 0 24px;
+  background: var(--header);
+}
+
+.layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+}
+
+.sidebar {
+  background: var(--sidebar);
+}
+
+.sidebar--left {
+  position: relative;
+  z-index: 40;
+  overflow: visible;
+  padding: 20px 24px;
+}
+
+.main {
+  background: var(--body);
+}
+
+.footer {
+  padding: 20px 24px;
+  background: var(--footer);
+  color: var(--text);
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+/* кнопка меню */
+.nav__btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 40px;
+  height: 40px;
+}
+
+.nav__line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  transition: width 0.18s ease, background 0.18s ease;
+}
+
+.nav__btn:hover .nav__line,
+.nav.is-open .nav__line {
+  width: 32px;
+  background: var(--text-hover);
+}
+
+/* выезд слева */
+.nav__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 20px;
+  transform: translateX(-20px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.nav.is-open .nav__menu {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.nav__menu a {
+  position: relative;
+  display: inline-block;
+  color: var(--text);
+  text-decoration: none;
+  padding-bottom: 3px;
+  opacity: 0;
+  transform: translateX(-12px);
+  transform-origin: left center;
+  scale: 1;
+  transition: opacity 0.12s ease, transform 0.12s ease, scale 0.1s ease, color 0.1s ease;
+}
+
+.nav.is-open .nav__menu a {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.nav.is-open .nav__menu a:nth-child(1) {
+  transition: opacity 0.18s ease 0.04s, transform 0.18s ease 0.04s, scale 0.1s ease, color 0.1s ease;
+}
+
+.nav.is-open .nav__menu a:nth-child(2) {
+  transition: opacity 0.18s ease 0.07s, transform 0.18s ease 0.07s, scale 0.1s ease, color 0.1s ease;
+}
+
+.nav.is-open .nav__menu a:nth-child(3) {
+  transition: opacity 0.18s ease 0.1s, transform 0.18s ease 0.1s, scale 0.1s ease, color 0.1s ease;
+}
+
+.nav.is-open .nav__menu a:nth-child(4) {
+  transition: opacity 0.18s ease 0.13s, transform 0.18s ease 0.13s, scale 0.1s ease, color 0.1s ease;
+}
+
+.nav.is-open .nav__menu a:hover {
+  color: var(--text-hover);
+  scale: 1.07;
+}
+
+.nav__menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--text-hover);
+  transition: width 0.1s ease;
+}
+
+.nav.is-open .nav__menu a:hover::after {
+  width: 100%;
+}
+
+/* язык */
+.lang {
+  position: absolute;
+  top: 0;
+  right: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.lang__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--text);
+  transition: color 0.18s ease;
+}
+
+.lang__btn svg {
+  width: 26px;
+  height: 26px;
+  stroke-width: 1.7;
+  transition: stroke-width 0.18s ease;
+}
+
+.lang__btn:hover,
+.lang.is-open .lang__btn {
+  color: var(--text-hover);
+}
+
+.lang__btn:hover svg,
+.lang.is-open .lang__btn svg {
+  stroke-width: 2.35;
+}
+
+/* выезд влево */
+.lang__menu {
+  position: absolute;
+  right: calc(100% + 8px);
+  top: 50%;
+  display: flex;
+  gap: 12px;
+  transform: translate(12px, -50%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.lang.is-open .lang__menu {
+  transform: translate(0, -50%);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.lang__opt {
+  color: var(--text);
+  letter-spacing: 0.04em;
+  transition: color 0.14s ease, scale 0.1s ease;
+}
+
+.lang__opt:hover,
+.lang__opt.is-active {
+  color: var(--text-hover);
+}
+
+.lang__opt:hover {
+  scale: 1.07;
+}
+
+/* Стиль кнопки — иконки */
+.icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  opacity: 0.88;
+  transition: opacity 0.18s ease, scale 0.1s ease, filter 0.18s ease;
+}
+
+/* контакты */
+.contact {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.contact__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.contact__btn:hover .icon,
+.contact.is-open .contact__btn .icon,
+.contact__item:hover .icon {
+  opacity: 1;
+  scale: 1.07;
+  filter: brightness(0.85) sepia(0.9) saturate(3) hue-rotate(226deg);
+}
+
+/* выезд вправо */
+.contact__menu {
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 50%;
+  display: flex;
+  gap: 12px;
+  transform: translate(-12px, -50%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.contact.is-open .contact__menu {
+  transform: translate(0, -50%);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.contact__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.contact__item::after {
+  content: attr(data-tip);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 10px;
+  background: var(--tip);
+  color: var(--text);
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.12s ease, visibility 0.12s ease;
+}
+
+.contact__item:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
