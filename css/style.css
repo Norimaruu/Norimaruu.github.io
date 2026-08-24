@@ -70,16 +70,6 @@ button {
   padding: 40px 32px;
 }
 
-.intro + .intro {
-  margin-top: 32px;
-}
-
-.intro h1 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
 .intro p {
   line-height: 1.65;
   margin-bottom: 14px;
@@ -89,26 +79,94 @@ button {
   margin-bottom: 0;
 }
 
-.intro h2 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 12px;
+.works {
+  margin-top: 40px;
 }
 
-.skills {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 18px;
-}
-
-.skills li {
+.work-card {
+  display: block;
+  max-width: 420px;
+  padding: 20px 22px;
+  background: var(--sidebar);
+  color: var(--text);
+  text-decoration: none;
   transition: color 0.14s ease, scale 0.1s ease;
+  transform-origin: left center;
 }
 
-.skills li:hover {
+.work-card:hover {
   color: var(--text-hover);
   scale: 1.07;
+}
+
+.work-card h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.work-card p {
+  line-height: 1.5;
+}
+
+.sampler {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.sampler__tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.sampler__tab {
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.14s ease, scale 0.1s ease;
+  transform-origin: left center;
+}
+
+.sampler__tab:hover,
+.sampler__tab.is-active {
+  color: var(--text-hover);
+  scale: 1.07;
+}
+
+.sampler__tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--text-hover);
+  transition: width 0.1s ease;
+}
+
+.sampler__tab:hover::after,
+.sampler__tab.is-active::after {
+  width: 100%;
+}
+
+.sampler__panel {
+  display: none;
+}
+
+.sampler__panel.is-active {
+  display: block;
+}
+
+.sampler__panel p {
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+.sampler__panel p:last-child {
+  margin-bottom: 0;
 }
 
 .footer {
@@ -190,10 +248,6 @@ button {
 
 .nav.is-open .nav__menu a:nth-child(3) {
   transition: opacity 0.18s ease 0.1s, transform 0.18s ease 0.1s, scale 0.1s ease, color 0.1s ease;
-}
-
-.nav.is-open .nav__menu a:nth-child(4) {
-  transition: opacity 0.18s ease 0.13s, transform 0.18s ease 0.13s, scale 0.1s ease, color 0.1s ease;
 }
 
 .nav.is-open .nav__menu a:hover {
@@ -347,6 +401,8 @@ button {
   justify-content: center;
   width: 40px;
   height: 40px;
+  color: inherit;
+  text-decoration: none;
 }
 
 .contact__item::after {
