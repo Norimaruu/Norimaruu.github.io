@@ -254,9 +254,9 @@ button {
   display: block;
   width: 28px;
   height: 28px;
-  object-fit: contain;
-  opacity: 0.88;
-  transition: opacity 0.18s ease, scale 0.1s ease, filter 0.18s ease;
+  fill: var(--text);
+  color: var(--text);
+  transition: fill 0.18s ease, color 0.18s ease, scale 0.1s ease;
 }
 
 /* контакты */
@@ -281,9 +281,9 @@ button {
 .contact__btn:hover .icon,
 .contact.is-open .contact__btn .icon,
 .contact__item:hover .icon {
-  opacity: 1;
+  fill: var(--text-hover);
+  color: var(--text-hover);
   scale: 1.07;
-  filter: brightness(0.85) sepia(0.9) saturate(3) hue-rotate(226deg);
 }
 
 /* выезд вправо */
