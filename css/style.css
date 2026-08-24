@@ -81,6 +81,11 @@ button {
 }
 
 .intro p {
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+.intro p:last-child {
   margin-bottom: 0;
 }
 
@@ -282,48 +287,12 @@ button {
   scale: 1.07;
 }
 
-.contact__btn picture,
-.contact__item picture {
+.contact .icon {
   display: block;
   width: 28px;
   height: 28px;
-  background-color: var(--text);
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-mode: alpha;
-  -webkit-mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  transition: background-color 0.18s ease, scale 0.1s ease;
-}
-
-.contact__btn picture {
-  mask-image: url("../assets/icons/contact_icon.svg");
-  -webkit-mask-image: url("../assets/icons/contact_icon.svg");
-}
-
-.contact__item:nth-child(1) picture {
-  mask-image: url("../assets/icons/telegram_icon.svg");
-  -webkit-mask-image: url("../assets/icons/telegram_icon.svg");
-}
-
-.contact__item:nth-child(2) picture {
-  mask-image: url("../assets/icons/google_icon.svg");
-  -webkit-mask-image: url("../assets/icons/google_icon.svg");
-}
-
-.contact__item:nth-child(3) picture {
-  mask-image: url("../assets/icons/reddit_icon.svg");
-  -webkit-mask-image: url("../assets/icons/reddit_icon.svg");
-}
-
-.contact__btn picture img,
-.contact__item picture img {
-  display: block;
-  width: 28px;
-  height: 28px;
-  opacity: 0;
+  fill: var(--text);
+  transition: fill 0.18s ease, scale 0.1s ease;
 }
 
 .contact {
@@ -344,10 +313,10 @@ button {
   height: 40px;
 }
 
-.contact__btn:hover picture,
-.contact.is-open .contact__btn picture,
-.contact__item:hover picture {
-  background-color: var(--text-hover);
+.contact__btn:hover .icon,
+.contact.is-open .contact__btn .icon,
+.contact__item:hover .icon {
+  fill: var(--text-hover);
   scale: 1.07;
 }
 
