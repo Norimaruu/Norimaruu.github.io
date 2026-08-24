@@ -7,21 +7,32 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- фиксированный хедер -->
   <header class="header">
     <div class="contact">
       <button class="contact__btn" type="button" data-i18n-aria="contact.label" aria-expanded="false">
-        <img class="icon" src="assets/icons/contact_icon.png" alt="">
+        <picture>
+          <source srcset="assets/icons/contact_icon.svg" type="image/svg+xml">
+          <img class="icon" src="assets/icons/contact_icon.png" alt="">
+        </picture>
       </button>
       <div class="contact__menu">
         <button class="contact__item" type="button" data-tip="Telegram" aria-label="Telegram">
-          <img class="icon" src="assets/icons/telegram_icon.png" alt="">
+          <picture>
+            <source srcset="assets/icons/telegram_icon.svg" type="image/svg+xml">
+            <img class="icon" src="assets/icons/telegram_icon.png" alt="">
+          </picture>
         </button>
         <button class="contact__item" type="button" data-tip="Gmail" aria-label="Gmail">
-          <img class="icon" src="assets/icons/google_icon.png" alt="">
+          <picture>
+            <source srcset="assets/icons/google_icon.svg" type="image/svg+xml">
+            <img class="icon" src="assets/icons/google_icon.png" alt="">
+          </picture>
         </button>
         <button class="contact__item" type="button" data-tip="Reddit" aria-label="Reddit">
-          <img class="icon" src="assets/icons/reddit_icon.png" alt="">
+          <picture>
+            <source srcset="assets/icons/reddit_icon.svg" type="image/svg+xml">
+            <img class="icon" src="assets/icons/reddit_icon.png" alt="">
+          </picture>
         </button>
       </div>
     </div>
@@ -57,11 +68,25 @@
         </nav>
       </div>
     </aside>
-    <main class="main"></main>
+    <main class="main">
+      <section id="home" class="intro">
+        <h1>Norimaru</h1>
+        <p data-i18n="intro.lead">Website development.</p>
+      </section>
+      <section id="about" class="intro">
+        <h2 data-i18n="intro.skills">Skills</h2>
+        <ul class="skills">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>SVG</li>
+          <li>PNG</li>
+        </ul>
+      </section>
+    </main>
     <aside class="sidebar sidebar--right"></aside>
   </div>
 
-  <!-- обычный футер -->
   <footer class="footer">
     <p data-i18n="footer.credit">This website was created by Norimaru</p>
   </footer>

@@ -7,6 +7,8 @@ const dict = {
     'nav.contact': 'Contact information',
     'lang.label': 'Language',
     'contact.label': 'Contact',
+    'intro.lead': 'Website development.',
+    'intro.skills': 'Skills',
     'footer.credit': 'This website was created by Norimaru',
   },
   uk: {
@@ -17,6 +19,8 @@ const dict = {
     'nav.contact': 'Контактна інформація',
     'lang.label': 'Мова',
     'contact.label': 'Контакти',
+    'intro.lead': 'Розробка сайтів.',
+    'intro.skills': 'Навички',
     'footer.credit': 'Сайт створено Norimaru',
   },
 };
