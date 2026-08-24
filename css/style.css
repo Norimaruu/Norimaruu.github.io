@@ -169,6 +169,13 @@ button {
   scale: 1.07;
 }
 
+.demo-btn--plain,
+.demo-btn--plain:hover {
+  color: var(--text);
+  scale: 1;
+  transition: none;
+}
+
 .demo-btn--texture:hover {
   background: var(--tip);
   color: var(--text);
@@ -307,7 +314,7 @@ button {
 }
 
 .scroll-demo {
-  max-height: 220px;
+  max-height: 140px;
   overflow-y: scroll;
   scrollbar-width: auto;
   scrollbar-color: var(--text-hover) transparent;
@@ -326,13 +333,33 @@ button {
   width: 32px;
 }
 
+.scroll-demo::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.scroll-demo::-webkit-scrollbar-button:start:decrement,
+.scroll-demo::-webkit-scrollbar-button:end:increment,
+.scroll-demo::-webkit-scrollbar-button:vertical:start:decrement,
+.scroll-demo::-webkit-scrollbar-button:vertical:end:increment {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
 .scroll-demo::-webkit-scrollbar-track {
   background: transparent;
 }
 
 .scroll-demo::-webkit-scrollbar-thumb {
   background: var(--text-hover);
+  border: none;
   border-radius: 0;
+}
+
+.scroll-demo::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 .page-menu {
