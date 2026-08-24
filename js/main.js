@@ -13,9 +13,9 @@ const dict = {
     'intro.p5': 'Open to new projects. If you have an idea for a website — write, we will discuss the tasks and bring it to life.',
     'work.sampler.title': 'Sampler',
     'work.sampler.desc': 'This page shows my capabilities.',
-    'sampler.tab1': 'Tab 1',
     'sampler.p1': 'This page is a sampler of what I can do in a browser: layout, interaction, and interface details.',
-    'sampler.p2': 'New tabs will appear here as I add more examples. Tab 1 is the starting point.',
+    'sampler.p2': 'New topics will appear in the menu as I add more examples. Navigation is the first one.',
+    'sampler.nav': 'Navigation',
     'footer.credit': 'This website was created by Norimaru',
   },
   ru: {
@@ -32,22 +32,19 @@ const dict = {
     'intro.p5': 'Открыт к новым проектам. Если у вас есть идея сайта — напишите, обсудим задачи и воплотим её в жизнь.',
     'work.sampler.title': 'Пробник',
     'work.sampler.desc': 'На этой странице показаны мои возможности.',
-    'sampler.tab1': 'Вкладка 1',
     'sampler.p1': 'На этой странице я показываю, что умею делать в браузере: вёрстку, интерактив и детали интерфейса.',
-    'sampler.p2': 'Новые вкладки будут появляться по мере добавления примеров. Вкладка 1 — начальная точка.',
+    'sampler.p2': 'Новые темы будут появляться в меню по мере добавления примеров. Навигация — первая из них.',
+    'sampler.nav': 'Навигация',
     'footer.credit': 'Сайт создан Norimaru',
   },
 };
-
 const STORAGE_KEY = 'lang';
-
 const nav = document.querySelector('.nav');
 const navBtn = document.querySelector('.nav__btn');
 const lang = document.querySelector('.lang');
 const langBtn = document.querySelector('.lang__btn');
 const contact = document.querySelector('.contact');
 const contactBtn = document.querySelector('.contact__btn');
-
 function getLang() {
   const saved = localStorage.getItem(STORAGE_KEY);
   if (saved === 'uk') return 'ru';
@@ -55,7 +52,6 @@ function getLang() {
   const code = (navigator.language || 'en').toLowerCase();
   return code.startsWith('ru') ? 'ru' : 'en';
 }
-
 function applyLang(code) {
   const pack = dict[code] || dict.en;
   document.documentElement.lang = code;
@@ -72,64 +68,30 @@ function applyLang(code) {
   });
   localStorage.setItem(STORAGE_KEY, code);
 }
-
-function openNav() {
-  nav.classList.add('is-open');
-  navBtn.setAttribute('aria-expanded', 'true');
-}
-function closeNav() {
-  nav.classList.remove('is-open');
-  navBtn.setAttribute('aria-expanded', 'false');
-}
-function toggleNav() {
-  if (nav.classList.contains('is-open')) closeNav();
-  else openNav();
-}
+function openNav() { nav.classList.add('is-open'); navBtn.setAttribute('aria-expanded', 'true'); }
+function closeNav() { nav.classList.remove('is-open'); navBtn.setAttribute('aria-expanded', 'false'); }
+function toggleNav() { if (nav.classList.contains('is-open')) closeNav(); else openNav(); }
 function toggleLang() {
   const open = !lang.classList.contains('is-open');
   lang.classList.toggle('is-open', open);
   langBtn.setAttribute('aria-expanded', String(open));
 }
-function closeLang() {
-  lang.classList.remove('is-open');
-  langBtn.setAttribute('aria-expanded', 'false');
-}
+function closeLang() { lang.classList.remove('is-open'); langBtn.setAttribute('aria-expanded', 'false'); }
 function toggleContact() {
   const open = !contact.classList.contains('is-open');
   contact.classList.toggle('is-open', open);
   contactBtn.setAttribute('aria-expanded', String(open));
 }
-function closeContact() {
-  contact.classList.remove('is-open');
-  contactBtn.setAttribute('aria-expanded', 'false');
-}
-
-navBtn.addEventListener('click', () => { toggleNav(); });
-langBtn.addEventListener('click', () => { toggleLang(); });
-contactBtn.addEventListener('click', () => { toggleContact(); });
+function closeContact() { contact.classList.remove('is-open'); contactBtn.setAttribute('aria-expanded', 'false'); }
+navBtn.addEventListener('click', () => toggleNav());
+langBtn.addEventListener('click', () => toggleLang());
+contactBtn.addEventListener('click', () => toggleContact());
 document.querySelectorAll('.lang__opt').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    applyLang(btn.dataset.lang);
-    closeLang();
-  });
+  btn.addEventListener('click', () => { applyLang(btn.dataset.lang); closeLang(); });
 });
 document.addEventListener('click', (e) => {
   if (!e.target.closest('.nav')) closeNav();
   if (!e.target.closest('.lang')) closeLang();
   if (!e.target.closest('.contact')) closeContact();
 });
-
-const sampler = document.querySelector('.sampler');
-if (sampler) {
-  const tabs = sampler.querySelectorAll('[data-tab]');
-  const panels = sampler.querySelectorAll('[data-panel]');
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      const id = tab.dataset.tab;
-      tabs.forEach((t) => t.classList.toggle('is-active', t === tab));
-      panels.forEach((p) => p.classList.toggle('is-active', p.dataset.panel === id));
-    });
-  });
-}
-
 applyLang(getLang());
