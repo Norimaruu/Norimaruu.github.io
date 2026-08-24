@@ -1,11 +1,11 @@
 :root {
-  --body: #16131c;
-  --sidebar: #1e1a26;
-  --header: #2f2540;
-  --footer: #1a1620;
-  --text: #ddd6e8;
-  --text-hover: #b08ad8;
-  --tip: #4a3068;
+  --body: #16131c;       /* боди */
+  --sidebar: #1e1a26;    /* сайдер */
+  --header: #2f2540;     /* хедер */
+  --footer: #1a1620;     /* футер */
+  --text: #ddd6e8;       /* текст / почти белый */
+  --text-hover: #b08ad8; /* текст при наведении */
+  --tip: #4a3068;        /* фон подсказки */
   --header-height: 72px;
 }
 
@@ -79,94 +79,31 @@ button {
   margin-bottom: 0;
 }
 
-.works {
-  margin-top: 40px;
-}
-
+/* карточка проекта */
 .work-card {
-  display: block;
   max-width: 420px;
-  padding: 20px 22px;
-  background: var(--sidebar);
-  color: var(--text);
-  text-decoration: none;
-  transition: color 0.14s ease, scale 0.1s ease;
-  transform-origin: left center;
+  padding: 24px 28px;
+  background: var(--header);
 }
 
-.work-card:hover {
+.work-card__title {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--text);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transform-origin: left center;
+  transition: color 0.14s ease, scale 0.1s ease;
+}
+
+.work-card__title:hover {
   color: var(--text-hover);
   scale: 1.07;
-}
-
-.work-card h2 {
-  font-size: 1.15rem;
-  font-weight: 600;
-  margin-bottom: 8px;
 }
 
 .work-card p {
   line-height: 1.5;
-}
-
-.sampler {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 36px;
-  align-items: start;
-}
-
-.sampler__tabs {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 14px;
-}
-
-.sampler__tab {
-  position: relative;
-  padding-bottom: 3px;
-  transition: color 0.14s ease, scale 0.1s ease;
-  transform-origin: left center;
-}
-
-.sampler__tab:hover,
-.sampler__tab.is-active {
-  color: var(--text-hover);
-  scale: 1.07;
-}
-
-.sampler__tab::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 1px;
-  background: var(--text-hover);
-  transition: width 0.1s ease;
-}
-
-.sampler__tab:hover::after,
-.sampler__tab.is-active::after {
-  width: 100%;
-}
-
-.sampler__panel {
-  display: none;
-}
-
-.sampler__panel.is-active {
-  display: block;
-}
-
-.sampler__panel p {
-  line-height: 1.65;
-  margin-bottom: 14px;
-}
-
-.sampler__panel p:last-child {
-  margin-bottom: 0;
 }
 
 .footer {
@@ -177,6 +114,7 @@ button {
   font-size: 0.875rem;
 }
 
+/* кнопка меню */
 .nav__btn {
   display: flex;
   flex-direction: column;
@@ -200,6 +138,7 @@ button {
   background: var(--text-hover);
 }
 
+/* выезд слева */
 .nav__menu {
   display: flex;
   flex-direction: column;
@@ -270,6 +209,7 @@ button {
   width: 100%;
 }
 
+/* язык */
 .lang {
   position: absolute;
   top: 0;
@@ -306,6 +246,7 @@ button {
   stroke-width: 2.35;
 }
 
+/* выезд влево */
 .lang__menu {
   position: absolute;
   right: calc(100% + 8px);
@@ -341,6 +282,7 @@ button {
   scale: 1.07;
 }
 
+/* Стиль кнопки — иконки */
 .contact .icon {
   display: block;
   width: 28px;
@@ -349,6 +291,7 @@ button {
   transition: fill 0.18s ease, scale 0.1s ease;
 }
 
+/* контакты */
 .contact {
   position: absolute;
   top: 0;
@@ -374,6 +317,7 @@ button {
   scale: 1.07;
 }
 
+/* выезд вправо */
 .contact__menu {
   position: absolute;
   left: calc(100% + 8px);
