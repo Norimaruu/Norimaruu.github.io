@@ -1,1 +1,137 @@
-see-local
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="sampler.design">Design</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="contact">
+      <button class="contact__btn" type="button" data-i18n-aria="contact.label" aria-expanded="false">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m17 0a1 1 0 0 0 -1 1c0 2.949-2.583 4-5 4h-7a4 4 0 0 0 -4 4v2a3.979 3.979 0 0 0 1.514 3.109l3.572 7.972a3.233 3.233 0 0 0 2.953 1.919 2.982 2.982 0 0 0 2.72-4.2l-2.2-4.8h2.441c2.417 0 5 1.051 5 4a1 1 0 0 0 2 0v-18a1 1 0 0 0 -1-1zm-8.063 20.619a.983.983 0 0 1 -.898 1.381 1.232 1.232 0 0 1 -1.126-.734l-2.808-6.266h2.254zm7.063-6.019a7.723 7.723 0 0 0 -5-1.6h-7a2 2 0 0 1 -2-2v-2a2 2 0 0 1 2-2h7a7.723 7.723 0 0 0 5-1.595zm7.9.852a1 1 0 0 1 -1.342.448l-2-1a1 1 0 0 1 .894-1.79l2 1a1 1 0 0 1 .448 1.337zm-3.79-9a1 1 0 0 1 .448-1.342l2-1a1 1 0 1 1 .894 1.79l-2 1a1 1 0 0 1 -1.342-.448zm-.11 3.548a1 1 0 0 1 1-1h2a1 1 0 0 1 0 2h-2a1 1 0 0 1 -1-1z"/>
+        </svg>
+      </button>
+      <div class="contact__menu">
+        <button class="contact__item" type="button" data-tip="Telegram" aria-label="Telegram">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12,0C5.373,0,0,5.373,0,12s5.373,12,12,12s12-5.373,12-12S18.627,0,12,0z M17.562,8.161c-0.18,1.897-0.962,6.502-1.359,8.627c-0.168,0.9-0.5,1.201-0.82,1.23c-0.697,0.064-1.226-0.461-1.901-0.903 c-1.056-0.692-1.653-1.123-2.678-1.799c-1.185-0.781-0.417-1.21,0.258-1.911c0.177-0.184,3.247-2.977,3.307-3.23 c0.007-0.032,0.015-0.15-0.056-0.212s-0.174-0.041-0.248-0.024c-0.106,0.024-1.793,1.139-5.062,3.345 c-0.479,0.329-0.913,0.489-1.302,0.481c-0.428-0.009-1.252-0.242-1.865-0.442c-0.751-0.244-1.349-0.374-1.297-0.788 c0.027-0.216,0.324-0.437,0.892-0.663c3.498-1.524,5.831-2.529,6.998-3.015c3.333-1.386,4.025-1.627,4.477-1.635 C17.472,7.214,17.608,7.681,17.562,8.161z"/>
+          </svg>
+        </button>
+        <a class="contact__item" href="mailto:norimaru.webdeveloper@gmail.com" data-tip="Gmail" aria-label="Gmail">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" d="m12,0C5.373,0,0,5.373,0,12s5.373,12,12,12,12-5.373,12-12S18.627,0,12,0Zm8,12c0,4.411-3.589,8-8,8s-8-3.589-8-8S7.589,4,12,4c1.782,0,3.468.573,4.876,1.658l-1.859,2.415c-.871-.671-1.914-1.025-3.017-1.025-2.731,0-4.952,2.222-4.952,4.952s2.222,4.952,4.952,4.952c2.199,0,4.068-1.441,4.713-3.429h-4.713v-3.048h8v1.524Z"/>
+          </svg>
+        </a>
+        <a class="contact__item" href="https://www.reddit.com/user/Norimaruu/" target="_blank" rel="noopener noreferrer" data-tip="Reddit" aria-label="Reddit">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9.25,14.5C8.561,14.5,8,13.939,8,13.25C8,12.561,8.561,12,9.25,12c0.689,0,1.25,0.561,1.25,1.25 C10.5,13.939,9.939,14.5,9.25,14.5z"/>
+            <path d="M14.97,16.095c0.127,0.127,0.126,0.332,0,0.458c-0.853,0.852-2.488,0.918-2.969,0.918c-0.481,0-2.116-0.066-2.968-0.918 c-0.127-0.127-0.127-0.331,0-0.458c0.127-0.127,0.331-0.127,0.458,0c0.538,0.538,1.688,0.728,2.51,0.728 c0.822,0,1.972-0.191,2.511-0.729C14.639,15.968,14.844,15.968,14.97,16.095z"/>
+            <path d="M16,13.25c0,0.69-0.561,1.25-1.25,1.25c-0.69,0-1.25-0.561-1.25-1.25c0-0.689,0.561-1.25,1.25-1.25 C15.439,12,16,12.561,16,13.25z"/>
+            <path d="M12,0C5.373,0,0,5.373,0,12s5.373,12,12,12s12-5.373,12-12S18.627,0,12,0z M18.957,13.599 c0.027,0.173,0.041,0.348,0.041,0.526c0,2.692-3.134,4.875-7,4.875c-3.866,0-7-2.183-7-4.875c0-0.179,0.015-0.355,0.042-0.529 C4.431,13.322,4.006,12.711,4.006,12c0-0.967,0.783-1.75,1.75-1.75c0.47,0,0.896,0.186,1.21,0.488 c1.212-0.873,2.886-1.431,4.749-1.483l0.89-4.185c0.017-0.081,0.066-0.152,0.135-0.197c0.069-0.045,0.154-0.061,0.235-0.044 l2.908,0.618C16.088,5.036,16.509,4.75,17,4.75c0.69,0,1.25,0.56,1.25,1.25S17.69,7.25,17,7.25c-0.67,0-1.213-0.529-1.244-1.191 l-2.604-0.554l-0.797,3.75c1.836,0.064,3.484,0.622,4.68,1.485c0.315-0.303,0.742-0.491,1.214-0.491c0.967,0,1.75,0.783,1.75,1.75 C19.998,12.714,19.57,13.327,18.957,13.599z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="lang">
+      <button class="lang__btn" type="button" data-i18n-aria="lang.label" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M3 12h18"></path>
+          <path d="M12 3a14.5 14.5 0 0 1 0 18"></path>
+          <path d="M12 3a14.5 14.5 0 0 0 0 18"></path>
+        </svg>
+      </button>
+      <div class="lang__menu">
+        <button class="lang__opt" type="button" data-lang="en">EN</button>
+        <button class="lang__opt" type="button" data-lang="ru">RU</button>
+      </div>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar sidebar--left">
+      <div class="nav nav--pinned">
+        <nav class="nav__menu">
+          <a href="index.html" data-i18n="nav.home">Home</a>
+          <a href="navigation.html" data-i18n="sampler.nav">Navigation</a>
+          <a href="design.html" data-i18n="sampler.design">Design</a>
+        </nav>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="design-board">
+        <article class="win" id="win-color">
+          <div class="win__bar" data-i18n="ds.color.title">Text color</div>
+          <div class="win__body">
+            <p class="win__sample" data-i18n="ds.color.text">Color can be quiet or a little brighter. Try a few — the words stay the same, the mood does not.</p>
+            <div class="win__row">
+              <button class="swatch" type="button" data-color="#ddd6e8" style="background:#ddd6e8"></button>
+              <button class="swatch" type="button" data-color="#b08ad8" style="background:#b08ad8"></button>
+              <button class="swatch" type="button" data-color="#4a3068" style="background:#4a3068"></button>
+              <button class="swatch" type="button" data-color="#2f2540" style="background:#2f2540"></button>
+              <input class="win-color" type="color" value="#ddd6e8">
+            </div>
+          </div>
+        </article>
+        <article class="win" id="win-theme">
+          <div class="win__bar" data-i18n="ds.theme.title">Theme</div>
+          <div class="win__body">
+            <p class="win__sample" data-i18n="ds.theme.text">Think of it as the light in the room. Darker, lighter, or back to the usual look — whichever feels comfortable.</p>
+            <div class="win__row">
+              <button class="demo-btn" type="button" data-theme-set="dark" data-i18n="ds.theme.dark">Dark</button>
+              <button class="demo-btn" type="button" data-theme-set="light" data-i18n="ds.theme.light">Light</button>
+              <button class="demo-btn" type="button" data-theme-set="" data-i18n="ds.theme.std">Usual</button>
+            </div>
+          </div>
+        </article>
+        <article class="win" id="win-lang">
+          <div class="win__bar" data-i18n="ds.lang.title">Language</div>
+          <div class="win__body">
+            <p class="win__sample" data-lang-sample></p>
+            <p class="win__note" data-i18n="ds.lang.text">A few languages live in this window. Switch them and see how the same thought sits in another voice.</p>
+            <div class="win__row">
+              <button class="demo-btn" type="button" data-win-lang="ru">RU</button>
+              <button class="demo-btn" type="button" data-win-lang="en">EN</button>
+              <button class="demo-btn" type="button" data-win-lang="uk">UK</button>
+              <button class="demo-btn" type="button" data-win-lang="de">DE</button>
+              <button class="demo-btn" type="button" data-win-lang="fr">FR</button>
+            </div>
+          </div>
+        </article>
+        <article class="win" id="win-font">
+          <div class="win__bar" data-i18n="ds.font.title">Typeface</div>
+          <div class="win__body">
+            <p class="win__sample" data-i18n="ds.font.text">A pixel face, a flowing script, something carved or technical — each one changes the character of the line.</p>
+            <div class="win__row">
+              <button class="demo-btn" type="button" data-font-set="" data-i18n="ds.font.std">Usual</button>
+              <button class="demo-btn" type="button" data-font-set="pixel" data-i18n="ds.font.pixel">Pixel</button>
+              <button class="demo-btn" type="button" data-font-set="script" data-i18n="ds.font.script">Script</button>
+              <button class="demo-btn" type="button" data-font-set="serif" data-i18n="ds.font.serif">Carved</button>
+              <button class="demo-btn" type="button" data-font-set="tech" data-i18n="ds.font.tech">Tech</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <section class="design-end">
+        <p data-i18n="ds.end">If you want to take this with you across the whole site, there is one more small thing. Flip the switch.</p>
+        <button class="tumbler" type="button" aria-pressed="false">
+          <span class="tumbler__circle"></span>
+          <span class="tumbler__bar"></span>
+        </button>
+      </section>
+    </main>
+    <aside class="sidebar sidebar--right"></aside>
+  </div>
+  <footer class="footer">
+    <p data-i18n="footer.credit">This website was created by Norimaru</p>
+  </footer>
+  <div class="modal modal--note" hidden>
+    <div class="modal__box">
+      <p class="modal__text" data-i18n="ds.f.info">Press F. A window will open where you can pick these same options — color, theme, language and typeface — and they will apply to the entire site. For language, German joins English and Russian.</p>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
