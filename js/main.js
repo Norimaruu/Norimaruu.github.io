@@ -1,1 +1,5 @@
-placeholder-will-fail-if-not-replaced
+const dict = {
+  en: {
+    'nav.menu': 'Menu'
+  }
+};
