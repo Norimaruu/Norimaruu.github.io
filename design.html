@@ -50,6 +50,7 @@
       </div>
     </div>
   </header>
+
   <div class="layout">
     <aside class="sidebar sidebar--left">
       <div class="nav nav--pinned">
@@ -65,7 +66,7 @@
         <article class="win" id="win-color">
           <div class="win__bar" data-i18n="ds.color.title">Text color</div>
           <div class="win__body">
-            <p class="win__sample" data-i18n="ds.color.text">Color can be quiet or a little brighter. Try a few — the words stay the same, the mood does not.</p>
+            <p class="win__sample" data-i18n="ds.color.text">This control changes the color of the text. Pick a swatch or open the color field to try another shade.</p>
             <div class="win__row">
               <button class="swatch" type="button" data-color="#ddd6e8" style="background:#ddd6e8"></button>
               <button class="swatch" type="button" data-color="#b08ad8" style="background:#b08ad8"></button>
@@ -75,10 +76,11 @@
             </div>
           </div>
         </article>
+
         <article class="win" id="win-theme">
           <div class="win__bar" data-i18n="ds.theme.title">Theme</div>
           <div class="win__body">
-            <p class="win__sample" data-i18n="ds.theme.text">Think of it as the light in the room. Darker, lighter, or back to the usual look — whichever feels comfortable.</p>
+            <p class="win__sample" data-i18n="ds.theme.text">Theme changes the palette of this window: dark, light, or the usual look of the site.</p>
             <div class="win__row">
               <button class="demo-btn" type="button" data-theme-set="dark" data-i18n="ds.theme.dark">Dark</button>
               <button class="demo-btn" type="button" data-theme-set="light" data-i18n="ds.theme.light">Light</button>
@@ -86,11 +88,12 @@
             </div>
           </div>
         </article>
+
         <article class="win" id="win-lang">
           <div class="win__bar" data-i18n="ds.lang.title">Language</div>
           <div class="win__body">
             <p class="win__sample" data-lang-sample></p>
-            <p class="win__note" data-i18n="ds.lang.text">A few languages live in this window. Switch them and see how the same thought sits in another voice.</p>
+            <p class="win__note" data-i18n="ds.lang.text">This window can show the same sentence in several languages. Choose a code to switch the sample.</p>
             <div class="win__row">
               <button class="demo-btn" type="button" data-win-lang="ru">RU</button>
               <button class="demo-btn" type="button" data-win-lang="en">EN</button>
@@ -100,38 +103,106 @@
             </div>
           </div>
         </article>
+
         <article class="win" id="win-font">
           <div class="win__bar" data-i18n="ds.font.title">Typeface</div>
           <div class="win__body">
-            <p class="win__sample" data-i18n="ds.font.text">A pixel face, a flowing script, something carved or technical — each one changes the character of the line.</p>
+            <p class="win__sample" data-i18n="ds.font.text">Typeface changes how the sample looks. Usual, pixel, script, or carved — pick one to compare.</p>
             <div class="win__row">
               <button class="demo-btn" type="button" data-font-set="" data-i18n="ds.font.std">Usual</button>
               <button class="demo-btn" type="button" data-font-set="pixel" data-i18n="ds.font.pixel">Pixel</button>
               <button class="demo-btn" type="button" data-font-set="script" data-i18n="ds.font.script">Script</button>
               <button class="demo-btn" type="button" data-font-set="serif" data-i18n="ds.font.serif">Carved</button>
-              <button class="demo-btn" type="button" data-font-set="tech" data-i18n="ds.font.tech">Tech</button>
             </div>
           </div>
         </article>
       </div>
+
       <section class="design-end">
-        <p data-i18n="ds.end">If you want to take this with you across the whole site, there is one more small thing. Flip the switch.</p>
+        <p data-i18n="ds.end">The switch below unlocks a settings window. After it is on, press F to open the same options for this page.</p>
         <button class="tumbler" type="button" aria-pressed="false">
-          <span class="tumbler__circle"></span>
+          <span class="tumbler__o"></span>
+          <span class="tumbler__dash"></span>
           <span class="tumbler__bar"></span>
         </button>
       </section>
     </main>
     <aside class="sidebar sidebar--right"></aside>
   </div>
+
   <footer class="footer">
     <p data-i18n="footer.credit">This website was created by Norimaru</p>
   </footer>
+
   <div class="modal modal--note" hidden>
     <div class="modal__box">
-      <p class="modal__text" data-i18n="ds.f.info">Press F. A window will open where you can pick these same options — color, theme, language and typeface — and they will apply to the entire site. For language, German joins English and Russian.</p>
+      <p class="modal__text" data-i18n="ds.f.info">Press F. A window will open where you can pick these same options — color, theme, language and typeface — for this page. German joins English and Russian.</p>
     </div>
   </div>
+
+  <div class="modal modal--fx" hidden>
+    <div class="modal__box">
+      <p class="fx-title" data-i18n="ds.f.title">Page settings</p>
+
+      <div class="fx-row">
+        <span class="fx-row__name" data-i18n="ds.f.color">Text color</span>
+        <button class="fx-reset" type="button" data-fx-reset="color" data-i18n-tip="ds.f.reset" data-i18n-aria="ds.f.reset" data-tip="Reset" aria-label="Reset">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12a9 9 0 1 0 3-6.7"></path>
+            <polyline points="3 4 3 9 8 9"></polyline>
+          </svg>
+        </button>
+        <input class="win-color" type="color" value="#ddd6e8" data-fx-color>
+      </div>
+
+      <div class="fx-row">
+        <span class="fx-row__name" data-i18n="ds.f.theme">Theme</span>
+        <button class="fx-reset" type="button" data-fx-reset="theme" data-i18n-tip="ds.f.reset" data-i18n-aria="ds.f.reset" data-tip="Reset" aria-label="Reset">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12a9 9 0 1 0 3-6.7"></path>
+            <polyline points="3 4 3 9 8 9"></polyline>
+          </svg>
+        </button>
+        <div class="win__row">
+          <button class="demo-btn" type="button" data-fx-theme="dark" data-i18n="ds.theme.dark">Dark</button>
+          <button class="demo-btn" type="button" data-fx-theme="light" data-i18n="ds.theme.light">Light</button>
+          <button class="demo-btn" type="button" data-fx-theme="" data-i18n="ds.theme.std">Usual</button>
+        </div>
+      </div>
+
+      <div class="fx-row">
+        <span class="fx-row__name" data-i18n="ds.f.lang">Language</span>
+        <button class="fx-reset" type="button" data-fx-reset="lang" data-i18n-tip="ds.f.reset" data-i18n-aria="ds.f.reset" data-tip="Reset" aria-label="Reset">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12a9 9 0 1 0 3-6.7"></path>
+            <polyline points="3 4 3 9 8 9"></polyline>
+          </svg>
+        </button>
+        <div class="win__row">
+          <button class="demo-btn" type="button" data-fx-lang="en">EN</button>
+          <button class="demo-btn" type="button" data-fx-lang="ru">RU</button>
+          <button class="demo-btn" type="button" data-fx-lang="de">DE</button>
+        </div>
+      </div>
+
+      <div class="fx-row">
+        <span class="fx-row__name" data-i18n="ds.f.font">Typeface</span>
+        <button class="fx-reset" type="button" data-fx-reset="font" data-i18n-tip="ds.f.reset" data-i18n-aria="ds.f.reset" data-tip="Reset" aria-label="Reset">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12a9 9 0 1 0 3-6.7"></path>
+            <polyline points="3 4 3 9 8 9"></polyline>
+          </svg>
+        </button>
+        <div class="win__row">
+          <button class="demo-btn" type="button" data-fx-font="" data-i18n="ds.font.std">Usual</button>
+          <button class="demo-btn" type="button" data-fx-font="pixel" data-i18n="ds.font.pixel">Pixel</button>
+          <button class="demo-btn" type="button" data-fx-font="script" data-i18n="ds.font.script">Script</button>
+          <button class="demo-btn" type="button" data-fx-font="serif" data-i18n="ds.font.serif">Carved</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/main.js"></script>
 </body>
 </html>
